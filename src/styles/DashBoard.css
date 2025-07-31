@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:  "Urbanist", sans-serif;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+a{
+    color: white;
+}
+.menu{
+    width: 20%;
+    height: 100%;
+    background-color: rgb(69, 8, 192);
+    box-shadow: 1px 8px 10px 1px rgba(20, 0, 76, 0.367);
+    color: white;
+}
+.perfil{
+    width: 100%;
+    height: 35%;
+    text-align: center;
+}
+.user-img{
+    width: 20vh;
+    height: 20vh;
+    margin-top: 4vh;
+}
+.menu-2{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    height: 65%;
+    margin: auto 0;
+}
+.menu-2 a{
+    font-size: 1.5rem;
+    padding: 3vh;
+
+}
+.dashboard{
+    width: 80%;
+    height: 100%;
+    background-color: aliceblue;
+}
+.dash-1{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+
+}
+.dash-1 h1{
+    margin-left: 3vw;
+}
+.menu-img{
+    margin-right: 3vw;
+    width: 3vh;
+    height: 3vh;
+}
+.dash-2{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+
+}
+.mini-container{
+    width: 30%;
+    height: 75%;
+    box-shadow: 1px 8px 10px 1px rgba(20, 0, 76, 0.367);
+}
+.menu-2 button{
+    width:100%;
+    font-size: 1.5rem;
+    padding: 3vh;
+    border: none;
+    color: white;
+    background-color: rgb(69, 8, 192);
+}
+button{
+    width: 50%;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    background-color:rgb(119, 91, 255);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.formulario{
+    width: 90%;
+    height: 50%;
+    display: grid;
+    margin: 0 auto;
+    padding: 2vh;
+
+}
+.formulario input{
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    padding: 2vh;
+    height: 2vh;
+}
+.formulario-rpta{
+    width: 90%;
+    height: 30%;
+    display: grid;
+    margin: 0 auto;
+    padding: 2vh;
+    text-align: center;
+}
+table{
+    border: 1px solid black;
+    border-radius: 5px;
+}
+thead{
+    background-color: rgba(110, 112, 132, 0.577);
+}
+.form{
+    height: 20%;
+    border-radius: 20px;
+    margin-bottom: 10vh;
+}

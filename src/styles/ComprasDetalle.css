@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+     font-family: "Figtree", sans-serif;
+}
+.container-2{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.cabeza{
+    margin-top: 2vh;
+    width:100% ;
+    display: flex;
+    justify-content: space-between;
+}
+.cabeza h2{
+    width: 90%;
+    margin: 0 0 0 5vh;
+    font-size: 2rem;
+    color: rgb(69, 8, 192);
+}
+.cabeza i{
+    margin: 0 3vh 0 0;
+    width: 10%;
+    font-size: 1.8rem;
+}
+.bi-exclamation-circle-fill{
+    color: orangered;
+}
+.mini-container{
+    padding: 2vh;
+    width: 18%;
+    height: 52vh;
+    display: grid;
+    border-radius: 5px;
+    
+}
+img{
+    width: 23vh;
+    height: 23vh;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+.mini-container p{
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1rem;
+}
+.mini-container button{
+    border: none;
+
+}
+.primero{
+    height: 55vh;
+    text-align: center;
+    margin: 3vh 0 0 25vh;
+    box-shadow: 1px 8px 10px 1px rgba(5, 1, 49, 0.367);
+}
+
+.primero button,.tercero button{
+    margin: auto;
+    border-radius: 8px;
+    width: 100%;
+    padding: 1vh 2vw;
+    background-color: orangered;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 800;
+}
+.segundo{
+
+    display: grid;
+    width: 20%;
+    margin: 3vh 0 0 22vh;
+    height:97vh;
+}
+.segundo h2,.segundo p:nth-of-type(1){
+    text-align: center;
+}
+.segundo p{
+    width: 85%;
+}
+.pag{
+    align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 4vh;
+}
+.segundo button{
+    margin-left: 2vh;
+    border-radius: 8px;
+    width: 70%;
+    height: 5vh;
+    background-color: orangered;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 800;
+}
+input[type="checkbox"]:checked {
+  accent-color: orangered; 
+}
+table{
+    display: flex;
+    flex-wrap: wrap;
+    height: 41vh;
+    overflow-y: scroll;
+}
+thead{
+    width: 100%;
+}
+tr{
+    display: flex;
+    justify-content: space-around;
+    height: 7vh;
+}
+tbody{
+    width: 100%;
+}
+.tabla th, td{
+    text-align: center;
+}
+.tercero{
+     text-align: center;
+    margin: 3vh 0 0 25vh;
+    box-shadow: 1px 8px 10px 1px rgba(5, 1, 49, 0.367);
+}
+
+.cuarto{
+    margin-bottom: -4.4vh;
+    border-radius: 30px 30px 0 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;  
+    padding: 2vh 2vh 0 2vh;
+    height: 24vh;
+    width: 100%;
+    box-shadow: 1px 8px 10px 1px rgba(5, 1, 49, 0.367); 
+}
+.resumen{
+    width: 30%;
+}
+.cuarto button{
+    margin: 1vh auto 2vh auto;
+    border-radius: 30px;
+    width: 80%;
+    padding: 1vh 0;
+    background-color: rgb(69, 8, 192);
+    color: aliceblue;
+    font-size: 1rem;
+    font-weight: 800;
+}
+.cuarto h2{
+    margin-bottom: 2vh;
+}
+th{
+    font-weight: 800;
+}
