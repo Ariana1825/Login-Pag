@@ -21,6 +21,8 @@ a{
     background-color: rgb(69, 8, 192);
     box-shadow: 1px 8px 10px 1px rgba(20, 0, 76, 0.367);
     color: white;
+    position: relative;
+    z-index: 3;
 }
 .perfil{
     width: 100%;
@@ -30,7 +32,9 @@ a{
 .user-img{
     width: 20vh;
     height: 20vh;
+    margin: 0;
     margin-top: 4vh;
+    
 }
 .menu-2{
     display: flex;
@@ -81,6 +85,7 @@ a{
 .mini-container{
     width: 30%;
     height: 75%;
+    border-radius: 20px;
     box-shadow: 1px 8px 10px 1px rgba(20, 0, 76, 0.367);
 }
 .menu-2 button{
@@ -116,22 +121,46 @@ button{
     height: 2vh;
 }
 .formulario-rpta{
-    width: 90%;
-    height: 30%;
-    display: grid;
-    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 1px 8px 10px 1px rgba(20, 0, 76, 0.367);
     padding: 2vh;
+    width: 40%;
+    height: 75%;
+    display: grid;
     text-align: center;
+    grid-template-rows: 10% 30%; 
+}
+.formulario-rpta h1{
+    font-weight: 800;
 }
 table{
     border: 1px solid black;
-    border-radius: 5px;
+    border-collapse:collapse;
+    
 }
 thead{
-    background-color: rgba(110, 112, 132, 0.577);
+    background-color: rgba(4, 0, 255, 0.495);
+    width: 100%;
+    
 }
-.form{
-    height: 20%;
-    border-radius: 20px;
-    margin-bottom: 10vh;
+th,td{
+    padding: 5px;
+
+}
+
+.rpta-vacia{
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    padding: 2vh;
+    font-weight: 800;
+    box-shadow: 1px 8px 10px 1px rgba(20, 0, 76, 0.367);
+}
+
+.rpta-vacia p{
+    margin-top: 3vh;
+}
+table .btn-funcion{
+    background-color: aliceblue;
+    margin-right: 1vh;
 }

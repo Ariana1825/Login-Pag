@@ -1,61 +1,79 @@
-import { useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
-import axios from "axios";
-
-interface LocationState {
-  correo?: string;
-  password?: string;
-}
-
-interface ApiResponse {
-  id: string;
-  createdAt: string;
-}
+import { useLocation,useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Users } from "../class/Users"
 
 export default function RptaBoard() {
-  const location = useLocation();
-  const { correo, password } = (location.state || {}) as LocationState;
-  const [id, setId] = useState<string>("");
-  const [createdAt, setCreatedAt] = useState<string>("");
+  const location = useLocation()
+  const { name, job, id, createdAt } = location.state || {}
+  const [usuarios, setUsuarios] = useState<Users[]>([]);
+  const navigate = useNavigate(); 
+  
 
   useEffect(() => {
-    if (!correo || !password) return;
+    const RecuperarUsuario : Users[] = JSON.parse(localStorage.getItem("usuarios") || "[]");
 
-    axios
-      .post<ApiResponse>(
-        "https://reqres.in/api/users",
-        { name: correo, job: password },
-        { headers: { "x-api-key": "reqres-free-v1" }, withCredentials: false }
-      )
-      .then(({ data }) => {
-        setId(data.id);
-        setCreatedAt(data.createdAt);
-        console.log(data);
-      })
-      .catch(console.error);
-  }, [correo, password]);
+    if (name && job && id && createdAt) {
 
-  if (!correo) {
-    return <p>No hay datos</p>;
+      const nuevo = new Users(name, job)
+      nuevo.UserCompleto(name, job, id, createdAt)
+
+      const actualizados = [...RecuperarUsuario, nuevo];
+        localStorage.setItem("usuarios", JSON.stringify(actualizados));
+        setUsuarios(actualizados);
+    } else {
+      setUsuarios(RecuperarUsuario);
+    }
+  }, [])
+
+  const eliminarUsuario = (id: string) => {
+  const nuevosUsuarios = usuarios.filter(u => u.id !== id);
+  setUsuarios(nuevosUsuarios);
+  localStorage.setItem("usuarios", JSON.stringify(nuevosUsuarios));
+}
+const editarUsuario= (id : string) =>{
+  const usuarioAEditar = usuarios.find(u => u.id === id)
+  if (usuarioAEditar) {
+    localStorage.setItem("editados", JSON.stringify(usuarioAEditar));
+    navigate("/Dashboard");
+}
+}
+
+  if(usuarios.length === 0) {
+    return <div className="mini-container rpta-vacia">
+      <h1>Lista</h1>
+      <p>VACÍO</p>
+      </div>
   }
 
   return (
-    <div className="mini-container form">
+
       <div className="formulario-rpta">
+        <h1>Lista</h1>
         <table>
           <thead>
             <tr>
-              <th>Respuesta del Dashboard</th>
+              <th>ID</th>
+              <th>Email</th>
+              <th>Password</th>
+              <th>CreatedAt</th>
+              <th>ㅤ</th>
+              <th>ㅤ</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td><strong>Correo:</strong> {correo}</td></tr>
-            <tr><td><strong>Contraseña:</strong> {password}</td></tr>
-            <tr><td><strong>ID generado:</strong> {id}</td></tr>
-            <tr><td><strong>Creado en:</strong> {createdAt}</td></tr>
+            {usuarios.map((usuario) =>(
+             <tr key={usuario.id!}>
+              <td>{usuario.id}</td>
+              <td>{usuario.name}</td>
+              <td>{usuario.job}</td>
+              <td>{usuario.createdAt}</td>
+              <td><button className="btn-funcion" onClick={() => eliminarUsuario(usuario.id!)}>💥</button></td>
+              <td><button className="btn-funcion" onClick={() => editarUsuario(usuario.id!)}>📨</button></td>
+            </tr>  ))}
           </tbody>
         </table>
       </div>
-    </div>
+ 
   );
 }
+
